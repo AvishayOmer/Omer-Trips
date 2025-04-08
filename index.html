@@ -1,85 +1,289 @@
 <!DOCTYPE html>
-<html lang="he">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>עומר אבטחה רפואית - טיולים</title>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>טיולי ירושלים</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 10;
-            padding: 10;
-            direction: rtl;
-            background-color: #f0f0f0;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
+      body {
+        font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
+        background: linear-gradient(to bottom right, #f6f9fc, #e0eafc);
+        color: #2c3e50;
+        text-align: center;
+        line-height: 1.6;
+        font-size: 18px;
+        padding: 0 10px;
+      }
+
+      header {
+        background: linear-gradient(90deg, #004d7a, #008793);
+        color: white;
+        padding: 30px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      #header-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      #logo {
+        height: 60px;
+        border-radius: 10px;
+      }
+
+      section, .contacts {
+        background: white;
+        margin: 30px auto;
+        border-radius: 12px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px 20px;
+        max-width: 800px;
+      }
+
+      .services h2, .contacts h2, .gallery h2 {
+        color: #004d7a;
+        margin-bottom: 20px;
+        font-size: 26px;
+      }
+
+      .description, .services p {
+        margin: 10px 0;
+      }
+
+      .contacts ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .contacts a {
+        color: #008793;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+        display: inline-block;
+        margin: 5px;
+        background-color: #e0f7fa;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .contacts a:hover {
+        background-color: #b2ebf2;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+      }
+
+      .gallery a {
+        display: block;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery a:hover {
+        transform: scale(1.05);
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        margin-top: 40px;
+        font-size: 16px;
+      }
+
+      @media (max-width: 600px) {
         header {
-            background-color: #2a3d66;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
+          text-align: center;
+          padding: 20px 10px;
         }
 
-        header img {
-            width: 100px;
+        #header-wrap {
+          flex-direction: column;
         }
 
-        .contact-info {
-            background-color: #3c517f;
-            padding: 15px;
-            color: white;
-            text-align: center;
+        #logo {
+          margin-top: 10px;
         }
+      }
 
-        .contact-info p {
-            font-size: 18px;
-            margin: 5px 0;
-        }
+      /* Slideshow Styles */
+      .slideshow {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+      }
 
-        .hero-section {
-            background-image: url('https://via.placeholder.com/1500x800?text=%D7%98%D7%99%D7%95%D7%9C+%D7%91%D7%90%D7%95%D7%A7%D7%91%D7%9C+%D7%91%D7%A8%D7%A9%D7%99%D7%9D');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-        }
+      .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
 
-        .hero-section h1 {
-            font-size: 50px;
-        }
+      .slide.active {
+        opacity: 1;
+      }
 
-        .hero-section p {
-            font-size: 20px;
-        }
+      /* Scroll Top Button */
+      #scrollTop {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #008793;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        display: none;
+      }
 
-        .cta-button {
-            background-color: #f4a261;
-            color: #fff;
-            padding: 15px 25px;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
+      #scrollTop:hover {
+        background-color: #004d7a;
+      }
 
-        .cta-button:hover {
-            background-color: #e09d4f;
-        }
+      /* Whatsapp Chat */
+      #whatsapp-chat {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        padding: 15px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+      }
 
-        footer {
-            background-color: #2a3d66;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+      #whatsapp-chat:hover {
+        background-color: #128c7e;
+      }
+
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <div id="header-wrap">
+        <h1>טיולי ירושלים -- Jerusalem Trips</h1>
+        <img src="images/logo.jpg" alt="לוגו" id="logo" />
+      </div>
+    </header>
 
- <h1>עומר אבטחה רפואית</h1>
-    <p>טיולים עם תחושת ביטחון!</p>
-    <p>0584181598</p>
+    <main>
+      <section class="services">
+        <h2>השירותים שלנו</h2>
+        <p>אבטחה רפואית - מערים וחובשים</p>
+        <p>שירותי אבטחה</p>
+        <p>מדריכי/ות טיולים</p>
+        <p>Medical and security services</p>
+      </section>
 
+      <section class="description">
+        <p>אזורי שירות: ירושלים וסביבותיה, ניתן גם לפי הזמנה בכל הארץ.</p>
+        <p>שירות ומחיר ללא תחרות.</p>
+        <p>ניתן לקבל את כל שירותי הטיולים משירותי הדרכה ועד שירותי אבטחה רפואית ושמירה.</p>
+      </section>
 
-</body>
+      <section class="contacts">
+        <h2>צרו קשר</h2>
+        <ul>
+          <li><a href="tel:0584181598">☎ עומר Omer : 058-418-1598</a></li>
+          <li><a href="tel:0542879174">☎ אקי Eki : 054-287-9174</a></li>
+          <li><a href="mailto:jerusalemtrips@gmail.com">✉ jerusalemtrips@gmail.com</a></li>
+        </ul>
+      </section>
+
+      <section class="gallery">
+        <h2>גלריה</h2>
+        <div class="slideshow">
+          <img src="images/1.jpg" alt="תמונה 1" class="slide active" />
+          <img src="images/2.jpg" alt="תמונה 2" class="slide" />
+          <img src="images/3.jpg" alt="תמונה 3" class="slide" />
+        </div>
+      </section>
+
+      <section class="booking">
+        <h2>הזמנת תאריך</h2>
+        <form>
+          <label for="date">בחר תאריך:</label>
+          <input type="date" id="date" name="date" required />
+          <button type="submit">הזמן</button>
+        </form>
+      </section>
+
+      <section class="contact-form">
+        <h2>צור קשר</h2>
+        <form action="mailto:jerusalemtrips@gmail.com" method="POST" enctype="text/plain">
+          <input type="text" name="name" placeholder="שם מלא" required />
+          <input type="email" name="email" placeholder="אימייל" required />
+          <textarea name="message" placeholder="ההודעה שלך"></textarea>
+          <button type="submit">שלח</button>
+        </form>
+      </section>
+
+      <button id="scrollTop">⬆ חזרה למעלה</button>
+      <div id="whatsapp-chat">💬</div>
+    </main>
+
+    <footer>
+      <p>&copy; כל הזכויות שמורות - omer avishay 2025</p>
+      <p>שירות באהבה ❤️</p>
+    </footer>
+
+    <script>
+      // Scroll to top functionality
+      const scrollTopButton = document.getElementById('scrollTop');
+      window.addEventListener('scroll', () => {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          scrollTopButton.style.display = "block";
+        } else {
+          scrollTopButton.style.display = "none";
+        }
+      });
+
+      scrollTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Slideshow functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 3000);
+
+      // WhatsApp chat functionality
+      document.getElementById('whatsapp-chat').addEventListener('click', () => {
+        window.open('https://wa.me/972584181598', '_blank');
+      });
+    </script>
+  </body>
+</html>
