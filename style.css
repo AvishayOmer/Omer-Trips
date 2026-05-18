@@ -1,208 +1,181 @@
 
-/* style.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    direction: rtl;
-  }
-  
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #f6f9fc, #e0eafc);
+  color: #2c3e50;
+  direction: rtl;
+}
+
+header {
+  background: linear-gradient(90deg, #004d7a, #008793);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#header-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logo {
+  width: 120px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  background: white;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #004d7a;
+}
+
+.contacts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contacts a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 12px;
+  background: #e0f7fa;
+  color: #008793;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.contacts a:hover {
+  background: #b2ebf2;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 10px;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+input, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  background: #008793;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #004d7a;
+}
+
+#scrollTop {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  background: #008793;
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+#scrollTop:hover {
+  background: #004d7a;
+}
+
+#whatsapp-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: url('images/whatsapp.png') no-repeat center/cover;
+  cursor: pointer;
+}
+
+/* רספונסיביות */
+@media (max-width: 600px) {
   header {
-    background-color: #003366;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+    padding: 10px;
   }
-  
+
   #header-wrap {
-    display: flex;
     flex-direction: column;
-    align-items: center;
   }
-  
+
   #logo {
-    width: 150px;
-    height: auto;
-    border-radius: 12px;
-    margin-top: 1rem;
-    animation: logoPop 2s ease-in-out infinite alternate;
+    width: 80px;
   }
-  
-  @keyframes logoPop {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.05);
-    }
-  }
-  
+
   main {
-    padding: 2rem;
+    padding: 10px;
   }
-  
+
   section {
-    margin-bottom: 3rem;
-    background: white;
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    font-family: inherit;
+    padding: 15px;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .contacts ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .contacts li a {
-    text-decoration: none;
-    color: #0077cc;
-    display: block;
-    margin: 0.5rem 0;
-  }
-  
+
   .slideshow {
-    position: relative;
-    height: 300px;
-    overflow: hidden;
+    height: 200px;
   }
-  
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out, transform 1s ease;
-    object-fit: cover;
-    border-radius: 10px;
+
+  #scrollTop, #whatsapp-chat {
+    width: 50px;
+    height: 50px;
   }
-  
-  .slide.active {
-    opacity: 1;
-    transform: scale(1.02);
-  }
-  
-  input,
-  textarea,
-  button {
-    width: 100%;
-    margin: 0.5rem 0;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: inherit;
-  }
-  
-  form {
-    background-color: #fafafa;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  button {
-    background-color: #0077cc;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #005fa3;
-  }
-  
+
   #scrollTop {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    padding: 1rem;
-    background-color: #003366;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-    z-index: 1000;
+    font-size: 18px;
   }
-  
-  #whatsapp-chat {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-image: url('images/whatsapp.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    z-index: 1000;
-  }
-  
-  /* Mobile Responsive Design */
-  @media (max-width: 768px) {
-    header {
-      padding: 0.8rem;
-      font-size: 1rem;
-    }
-  
-    #logo {
-      width: 100px;
-      margin-top: 0.5rem;
-    }
-  
-    main {
-      padding: 1rem;
-    }
-  
-    section {
-      padding: 1rem;
-      margin-bottom: 2rem;
-      font-size: 1rem;
-    }
-  
-    input,
-    textarea,
-    button {
-      font-size: 0.9rem;
-      padding: 0.6rem;
-    }
-  
-    #scrollTop,
-    #whatsapp-chat {
-      width: 50px;
-      height: 50px;
-      bottom: 20px;
-    }
-  
-    #scrollTop {
-      font-size: 1.2rem;
-      padding: 0.8rem;
-    }
-  
-    .slideshow {
-      height: 200px;
-    }
-  }
-  
+}
+
+

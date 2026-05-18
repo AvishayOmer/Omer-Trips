@@ -1,7 +1,32 @@
-👋 Hi, I’m @Omer
-👀 I’m interested in trip s
-🌱 I’m currently learning fan
-💞️ I’m looking to collaborate whit evry baddy
-📫 How to reach me 0505437050
-😄 Pronouns: Excellent service and price
-⚡ Fun fact: in jerusalem and mor ......
+js.
+
+// Scroll to Top Button
+const scrollTopButton = document.getElementById('scrollTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    scrollTopButton.style.display = 'block';
+  } else {
+    scrollTopButton.style.display = 'none';
+  }
+});
+
+scrollTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Slideshow
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+setInterval(() => {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}, 3000);
+
+// WhatsApp Chat Button
+document.getElementById('whatsapp-chat').addEventListener('click', () => {
+  window.open('https://wa.me/972584181598', '_blank');
+});
+
