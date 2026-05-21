@@ -215,3 +215,46 @@ window.addEventListener("scroll", () => {
     fabMain.style.transform = "scale(0.9)";
   }
 });
+emailjs.init(u9MRRRVgErghPjkuE);
+emailjs.sendForm(tripjeru_service, template_4qoa25e, contactForm)
+// רשימת 16 התמונות שלך
+const sliderImages = [
+  "images/1.jpg",
+  "images/2.jpg",
+  "images/3.jpg",
+  "images/4.jpg",
+  "images/5.jpg",
+  "images/6.jpg",
+  "images/7.jpg",
+  "images/8.jpg",
+  "images/9.jpg",
+  "images/10.jpg",
+  "images/11.jpg",
+  "images/12.jpg",
+  "images/13.jpg",
+  "images/14.jpg",
+  "images/15.jpg",
+  "images/16.jpg"
+];
+
+let sliderIndex = 0;
+const slider = document.getElementById("image-slider");
+
+// החלפת תמונה עם fade
+function changeSlide() {
+  sliderIndex = (sliderIndex + 1) % sliderImages.length;
+
+  slider.style.opacity = 0;
+
+  setTimeout(() => {
+    slider.src = sliderImages[sliderIndex];
+    slider.style.opacity = 1;
+  }, 400);
+}
+
+// מעבר אוטומטי כל 4 שניות
+setInterval(changeSlide, 4000);
+
+
+
+
