@@ -2,7 +2,7 @@
    אתחול EmailJS
 ----------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
-  emailjs.init("YOUR_PUBLIC_KEY"); // הכנס כאן את המפתח שלך
+  emailjs.init("u9MRRRVgErghPjkuE"); // הכנס כאן את המפתח שלך
 });
 
 /* -----------------------------------------------------------
@@ -94,7 +94,7 @@ if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    emailjs.sendForm("service_xxx", "template_xxx", this)
+    emailjs.sendForm("tripjeru_service", "template_4qoa25e", this)
       .then(() => {
         toast.innerText = "הטופס נשלח בהצלחה!";
         toast.classList.add("show");
@@ -215,8 +215,8 @@ window.addEventListener("scroll", () => {
     fabMain.style.transform = "scale(0.9)";
   }
 });
-emailjs.init(u9MRRRVgErghPjkuE);
-emailjs.sendForm(tripjeru_service, template_4qoa25e, contactForm)
+emailjs.init("u9MRRRVgErghPjkuE");
+emailjs.sendForm("tripjeru_service", "template_4qoa25e, contactForm")
 // רשימת 16 התמונות שלך
 const sliderImages = [
   "images/1.jpg",
