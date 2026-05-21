@@ -1,99 +1,589 @@
-
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>טיולי ירושלים</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+
+  <!-- בסיס SEO -->
+  <title>טיולי ירושלים | סיורים מודרכים, אבטחה רפואית והפקות טיולים בישראל</title>
+  <meta name="description" content="טיולי ירושלים - סיורים מודרכים, אבטחה רפואית, ליווי מקצועי ותכנון טיולים בכל רחבי ישראל. טיולים פרטיים, קבוצות, משפחות, הפקות שטח, לוגיסטיקה מלאה ושירות אישי 24/6.">
+  <meta name="keywords" content="טיולי ירושלים, סיורים מודרכים בירושלים, מדריך טיולים בישראל, אבטחה רפואית לטיולים, טיולים מאורגנים, טיולים פרטיים, טיולים למשפחות, טיולים לקבוצות, הפקות שטח, ליווי טיולים, טיולים לים המלח, טיולים למצדה, טיולים לאילת, טיולים לתל אביב, טיולים בארץ, Jerusalem Trips, Medical & Security">
+  <meta name="author" content="טיולי ירושלים">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0f19">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tripjeru.org.il/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="טיולי ירושלים | סיורים מודרכים, אבטחה רפואית והפקות טיולים בישראל">
+  <meta property="og:description" content="סיורים מקצועיים, אבטחה רפואית, ליווי והדרכת טיולים בכל רחבי ישראל. שירות אישי, ניסיון רב ולקוחות מרוצים.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tripjeru.org.il/">
+  <meta property="og:image" content="https://tripjeru.org.il/images/logo.jpg">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="טיולי ירושלים | סיורים מודרכים, אבטחה רפואית והפקות טיולים בישראל">
+  <meta name="twitter:description" content="טיולים מודרכים, אבטחה רפואית, ליווי מקצועי ותכנון טיולים בירושלים ובכל הארץ.">
+  <meta name="twitter:image" content="https://tripjeru.org.il/images/logo.jpg">
+
+  <!-- אייקון -->
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- CSS ראשי -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "טיולי ירושלים",
+    "image": "https://tripjeru.org.il/images/logo.jpg",
+    "url": "https://tripjeru.org.il/",
+    "telephone": "+972-50-325-1251",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IL",
+      "addressLocality": "ירושלים",
+      "addressRegion": "מחוז ירושלים"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "31.778",
+      "longitude": "35.235"
+    },
+    "description": "טיולי ירושלים - סיורים מודרכים, אבטחה רפואית, ליווי ותכנון טיולים בכל רחבי ישראל.",
+    "priceRange": "$$",
+    "areaServed": [
+      "ירושלים",
+      "ים המלח",
+      "מצדה",
+      "תל אביב",
+      "אילת",
+      "צפון הארץ",
+      "נגב"
+    ],
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://www.instagram.com/"
+    ]
+  }
+  </script>
+
+  <!-- FAQPage ל-SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "האם אפשר להזמין טיול פרטי?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "כן, יש התאמה אישית מלאה לכל לקוח, משפחה או קבוצה, כולל בניית מסלול לפי הצרכים שלכם."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "האם יש אבטחה רפואית בטיולים?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "כן, ניתן לשלב חובשים, פאראמדיקים ואבטחה רפואית מלאה לפי סוג הטיול ורמת הסיכון."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "באילו אזורים מתקיימים הטיולים?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "הטיולים מתקיימים בירושלים, ים המלח, מצדה, תל אביב, אילת, צפון הארץ, הנגב ואזורים נוספים בישראל."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "האם ניתן להזמין טיולים לקבוצות?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "כן, אנו מתמחים בטיולים לקבוצות, ארגונים, מוסדות, משפחות גדולות וקבוצות מאורגנות מחו\"ל."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
+
 <body>
 
-<header>
-  <div id="header-wrap">
-    <h1>טיולי ירושלים - Jerusalem Trips</h1>
-    <img src="images/logo.jpg" alt="לוגו" id="logo" />
-  </div>
-</header>
+  <!-- כותרת עליונה / Header -->
+  <header class="site-header" aria-label="כותרת ראשית">
+    <div class="header-inner">
+      <a href="#top" class="logo-link" aria-label="חזרה לדף הבית - טיולי ירושלים">
+        <img
+          src="images/logo.jpg"
+          alt="לוגו טיולי ירושלים - Jerusalem Trips Medical & Security"
+          class="logo"
+          loading="lazy"
+          draggable="false"
+          oncontextmenu="return false;"
+        >
+      </a>
 
-<main>
-  <section class="services">
-    <h2>השירותים שלנו</h2>
-    <p>אבטחה רפואית - מערים וחובשים</p>
-    <p>שירותי אבטחה</p>
-    <p>מדריכי/ות טיולים</p>
-    <p>Medical and security services</p>
-  </section>
+      <!-- ניווט ראשי -->
+      <nav class="main-nav" aria-label="תפריט ראשי">
+        <button class="nav-toggle" aria-label="פתיחת תפריט ניווט">
+          ☰
+        </button>
+        <ul class="nav-list">
+          <li><a href="#about">אודות</a></li>
+          <li><a href="#service-areas">אזורי פעילות</a></li>
+          <li><a href="#popular-tours">מסלולים פופולריים</a></li>
+          <li><a href="#medical-security">אבטחה רפואית</a></li>
+          <li><a href="#logistics">לוגיסטיקה והפקות</a></li>
+          <li><a href="#faq">שאלות נפוצות</a></li>
+          <li><a href="#reviews">לקוחות ממליצים</a></li>
+          <li><a href="#gallery">גלריה</a></li>
+          <li><a href="#contact">צרו קשר</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <section class="description">
-    <p>אזורי שירות: ירושלים וסביבותיה, ניתן גם לפי הזמנה בכל הארץ.</p>
-    <p>שירות ומחיר ללא תחרות.</p>
-    <p>ניתן לקבל את כל שירותי הטיולים משירותי הדרכה ועד שירותי אבטחה רפואית ושמירה.</p>
-  </section>
+  <!-- H1 יחיד לעמוד - חשוב ל-SEO -->
+  <h1 class="main-title">
+    טיולי ירושלים - סיורים מודרכים, אבטחה רפואית והדרכת טיולים בישראל
+  </h1>
 
-  <section class="contacts">
-    <h2>צרו קשר</h2>
-    <ul>
-      <li><a href="tel:0584181598">☎ עומר Omer : 058-418-1598</a></li>
-      <li><a href="tel:0542879174">☎ אקי Eki : 054-287-9174</a></li>
-      <li><a href="mailto:jerusalemtrips@gmail.com">✉ jerusalemtrips@gmail.com</a></li>
-    </ul>
-  </section>
+  <!-- Hero Section עם סליידר -->
+  <section class="hero" aria-label="תמונת פתיחה">
+    <div class="hero-slide active">
+      <img src="images/1.jpg" alt="טיול מודרך בירושלים - נוף מרהיב" loading="eager" fetchpriority="high">
+      <div class="hero-text">
+        <h2>טיולי ירושלים</h2>
+        <p>סיורים מודרכים, אבטחה רפואית והפקות טיולים בישראל</p>
+      </div>
+    </div>
 
-  <section class="gallery">
-        <h2>גלריה</h2>
-        <div class="gallery">
-          <div class="image-wrapper"><img src="images/1.jpg" alt="תמונה 1"></div>
-          <div class="image-wrapper"><img src="images/2.jpg" alt="תמונה 2"></div>
-          <div class="image-wrapper"><img src="images/3.jpg" alt="תמונה 3"></div>
-          <div class="image-wrapper"><img src="images/4.jpg" alt="תמונה 4"></div>
-          <div class="image-wrapper"><img src="images/5.jpg" alt="תמונה 5"></div>
-          <div class="image-wrapper"><img src="images/6.jpg" alt="תמונה 6"></div>
-        </div>
-      </section>
-  
-      <section class="video-section">
-        <h2>וידאוים</h2>
-        <div class="video-wrapper">
-          <video class="responsive-video" controls>
-            <source src="video1.mp4" type="video/mp4">
-            הווידיאו לא נתמך.
-          </video>
-        </div>
-        <div class="video-wrapper">
-          <video class="responsive-video" controls>
-            <source src="video2.mp4" type="video/mp4">
-            הווידיאו לא נתמך.
-          </video>
-        </div>
-      </section>
-    </main>
-  
+    <div class="hero-slide">
+      <img src="images/2.jpg" alt="טיולים בישראל - חוויה בלתי נשכחת" loading="lazy">
+      <div class="hero-text">
+        <h2>חוויה בלתי נשכחת</h2>
+        <p>ליווי מקצועי לכל סוגי הטיולים והקבוצות</p>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="images/3.jpg" alt="אבטחה רפואית בשטח - טיולים בטוחים" loading="lazy">
+      <div class="hero-text">
+        <h2>ביטחון ושקט נפשי</h2>
+        <p>אבטחה רפואית ושירותי ליווי מקצועיים בשטח</p>
+      </div>
+    </div>
+
+    <div class="hero-controls" aria-label="בקרת סליידר">
+      <button class="hero-prev" aria-label="תמונה קודמת">‹</button>
+      <button class="hero-next" aria-label="תמונה הבאה">›</button>
     </div>
   </section>
 
-  <section class="booking">
-    <h2>הזמנת תאריך</h2>
-    <form>
-      <label for="date">בחר תאריך:</label>
-      <input type="date" id="date" name="date" required />
-      <button type="submit">הזמן</button>
-    </form>
+  <!-- טקסט פתיחה קצר מרובד ל-SEO -->
+  <div class="hero-text-stack" aria-hidden="true">
+    <div>שלום</div>
+    <div>Welcome</div>
+    <div>ליווי ותכנון טיולים מקצועי</div>
+  </div>
+
+  <!-- גלריית סליידר עם לוגו צף -->
+  <div class="gallery slider-container" aria-label="תמונות אווירה מטיולים">
+    <img
+      id="image-slider"
+      src="images/1.jpg"
+      alt="טיולי ירושלים - סיורים מודרכים בירושלים"
+      loading="eager"
+      fetchpriority="high"
+      draggable="false"
+      oncontextmenu="return false;"
+    >
+    <img
+      src="images/logo.jpg"
+      class="slider-watermark"
+      alt="לוגו טיולי ירושלים"
+      draggable="false"
+      oncontextmenu="return false;"
+    >
+  </div>
+
+  <!-- אודות - חדר SEO ראשון -->
+  <section id="about" class="text-container">
+    <h2>ברוכים הבאים לטיולי ירושלים</h2>
+    <p>
+      טיולי ירושלים היא חברה המתמחה בסיורים מודרכים, אבטחה רפואית, ליווי ותכנון טיולים בכל רחבי ישראל.
+      אנו משלבים ניסיון רב שנים בשטח, היכרות עמוקה עם הארץ, שירות אישי ומקצועי, וגמישות מלאה לצרכים של כל לקוח.
+    </p>
+    <p>
+      בין אם אתם משפחה, קבוצה, ארגון, מוסד חינוכי או תיירים מחו"ל – אנחנו כאן כדי לבנות עבורכם
+      חוויית טיול מושלמת, בטוחה, מרגשת ומותאמת אישית.
+    </p>
+    <ul class="about-highlights">
+      <li>שירות אישי ומקצועי מותאם לכל לקוח 24/6</li>
+      <li>ניסיון רב של מספר שנים בתחום הטיולים והאבטחה</li>
+      <li>לקוחות רבים ומרוצים מהארץ ומחו"ל</li>
+      <li>גמישות בזמנים ובמסלולים בעת הזמנות חדשות</li>
+    </ul>
   </section>
 
-  <button id="scrollTop">⬆</button>
-  <div id="whatsapp-chat" title="צ'אט בוואטסאפ"></div>
-</main>
+  <!-- חדר SEO נוסף: אבטחה רפואית -->
+  <section id="medical-security" class="text-container">
+    <h2>אבטחה רפואית ושירותי Medical & Security</h2>
+    <p>
+      אחד התחומים המרכזיים בהם טיולי ירושלים מתמחה הוא שילוב אבטחה רפואית ושירותי Medical & Security בטיולים.
+      אנו מבינים שטיול טוב הוא טיול בטוח, ולכן מציעים מעטפת מלאה של שירותי אבטחה רפואית בשטח.
+    </p>
+    <p>
+      ניתן לשלב בטיולים:
+    </p>
+    <ul>
+      <li>חובשים מוסמכים עם ציוד רפואי בסיסי ומתקדם</li>
+      <li>פאראמדיקים מנוסים לטיולים מאתגרים או מרוחקים</li>
+      <li>אבטחה רפואית לאירועים, הפקות שטח וימי גיבוש</li>
+      <li>תיאום עם גורמי חירום לפי הצורך</li>
+    </ul>
+    <p>
+      שירותי האבטחה הרפואית שלנו מותאמים במיוחד לקבוצות, ארגונים, מוסדות חינוך, טיולי שטח, טיולי לילה,
+      טיולים במדבר, מסלולים מאתגרים ועוד.
+    </p>
+  </section>
 
-<footer>
-  <p>&copy; כל הזכויות שמורות --- 
-     שירות באהבה ❤️</p>
-</footer>
+  <!-- חדר SEO נוסף: לוגיסטיקה והפקות -->
+  <section id="logistics" class="text-container">
+    <h2>לוגיסטיקה, הפקות שטח ותכנון טיולים</h2>
+    <p>
+      מעבר לסיורים מודרכים, טיולי ירושלים מספקת שירותי לוגיסטיקה והפקות שטח ברמה גבוהה.
+      אנו מלווים אתכם משלב הרעיון ועד לסיום הטיול, ודואגים לכל הפרטים הקטנים.
+    </p>
+    <ul>
+      <li>תכנון מסלול מלא לפי רמת קושי, גילאים וצרכים מיוחדים</li>
+      <li>תיאום הסעות, לינה, ארוחות, אטרקציות וכניסות לאתרים</li>
+      <li>הפקת ימי גיבוש, ימי כיף, טיולי חברה וטיולי משפחות</li>
+      <li>ליווי צמוד בשטח, כולל מדריכים מקצועיים ואנשי צוות</li>
+    </ul>
+    <p>
+      כל טיול נבנה באופן אישי, תוך הקשבה מלאה לצרכים שלכם, לתקציב, לזמנים ולמטרות הטיול.
+    </p>
+  </section>
 
-<script src="script.js"></script>
+  <!-- שאלות נפוצות -->
+  <section id="faq" class="text-container">
+    <h2>שאלות נפוצות</h2>
 
+    <details>
+      <summary>האם אפשר להזמין טיול פרטי?</summary>
+      <p>כן, יש התאמה אישית מלאה לכל לקוח וקבוצה, כולל בניית מסלול לפי תחומי עניין, רמת קושי וזמן.</p>
+    </details>
+
+    <details>
+      <summary>האם יש אבטחה רפואית?</summary>
+      <p>כן, ניתן לשלב חובשים, פאראמדיקים ואבטחה רפואית מלאה לפי הצורך וסוג הטיול.</p>
+    </details>
+
+    <details>
+      <summary>באילו אזורים מתקיימים הטיולים?</summary>
+      <p>ירושלים, ים המלח, מצדה, תל אביב, אילת, צפון הארץ, הנגב ואזורים נוספים בישראל.</p>
+    </details>
+
+    <details>
+      <summary>האם ניתן להזמין קבוצות?</summary>
+      <p>כן, קיימת אפשרות לטיולים פרטיים, משפחות, קבוצות, ארגונים ומוסדות.</p>
+    </details>
+
+    <details>
+      <summary>האם אתם עובדים גם עם תיירים מחו&quot;ל?</summary>
+      <p>בהחלט. אנו מציעים סיורים מודרכים גם באנגלית ושפות נוספות, כולל ליווי מלא מרגע הנחיתה.</p>
+    </details>
+  </section>
+
+  <!-- לקוחות ממליצים -->
+  <section id="reviews" class="text-container">
+    <h2>לקוחות ממליצים</h2>
+
+    <div class="review-card">
+      ★★★★★
+      <p>"אחלה שירות, מקצועי מאוד. הרגשנו בטוחים ומלווים לאורך כל הדרך."</p>
+    </div>
+
+    <div class="review-card">
+      ★★★★★
+      <p>"חוויה מעולה לכל המשפחה. המסלול היה מותאם לילדים וההדרכה הייתה מרתקת."</p>
+    </div>
+
+    <div class="review-card">
+      ★★★★★
+      <p>"יחס אישי, שירות מצוין והכל ברמה גבוהה. ממליצים בחום על טיולי ירושלים."</p>
+    </div>
+  </section>
+
+  <!-- אזורי פעילות ושירות -->
+  <section id="service-areas" class="text-container">
+    <h2>אזורי פעילות ושירות</h2>
+
+    <p>
+      טיולי ירושלים מספקים שירותי הדרכה, אבטחה, ליווי ותכנון טיולים במגוון אזורים ברחבי ישראל.
+      אנו מתאימים את המסלול לאזור, לעונה ולסוג הקבוצה.
+    </p>
+
+    <div class="service-areas-grid">
+      <div class="service-card">
+        <h3>ירושלים</h3>
+        <p>סיורים בעיר העתיקה, הכותל, שוק מחנה יהודה, אתרי מורשת ומסלולים מיוחדים.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>ים המלח</h3>
+        <p>טיולי טבע, מסלולי שטח, תצפיות, מעיינות ואטרקציות באזור הנמוך בעולם.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>מצדה</h3>
+        <p>סיורי מורשת, זריחות, מסלולי שטח מודרכים וחיבור לסיפור ההיסטורי המרגש.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>תל אביב</h3>
+        <p>סיורים עירוניים, קולינריה, טיילת, אתרי תרבות ושכונות מיוחדות.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>אילת והדרום</h3>
+        <p>טיולי מדבר, נוף, טיולי משפחות, מסלולי שטח ואטרקציות ימיות.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- מסלולים פופולריים -->
+  <section id="popular-tours" class="text-container">
+    <h2>מסלולים פופולריים</h2>
+
+    <div class="service-card">
+      <h3>ירושלים העתיקה</h3>
+      <p>הכותל, העיר העתיקה, שוק מחנה יהודה ונקודות תצפית מרהיבות על העיר.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>מצדה וים המלח</h3>
+      <p>טיול זריחה, מסלולי טבע, תצפיות וחוויית ים המלח הייחודית.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>אילת והדרום</h3>
+      <p>מדבר, נוף, טיולי משפחות, מסלולי שטח ואטרקציות לכל הגילאים.</p>
+    </div>
+  </section>
+
+  <!-- חדר SEO נוסף: למה לבחור בנו -->
+  <section id="why-us" class="text-container">
+    <h2>למה לבחור בטיולי ירושלים?</h2>
+    <p>
+      יש הרבה חברות טיולים בישראל, אבל טיולי ירושלים משלבת בין מקצועיות, ניסיון, שירות אישי ואהבה אמיתית לשטח.
+    </p>
+    <ul>
+      <li>היכרות עמוקה עם השטח, המסלולים והאתרים ההיסטוריים</li>
+      <li>שילוב ייחודי של סיורים מודרכים עם אבטחה רפואית</li>
+      <li>התאמה מלאה לקהל דתי, חילוני, משפחות, קבוצות ותיירים מחו"ל</li>
+      <li>שקיפות מלאה, מחירים הוגנים ושירות ללא פשרות</li>
+    </ul>
+  </section>
+
+  <!-- יצירת קשר -->
+  <section id="contact" class="text-container">
+    <h2>צרו קשר</h2>
+    <p>להזמנה, תיאום טיול והצעת מחיר מותאמת אישית:</p>
+
+    <button id="openContactModal">
+      📩 יצירת קשר מהירה
+    </button>
+
+    <p class="contact-direct">
+      אפשר גם לפנות ישירות בוואטסאפ או בטלפון:
+      <br>
+      <a href="https://wa.me/972503251251" target="_blank" rel="noopener">WhatsApp: 050-325-1251</a>
+    </p>
+  </section>
+
+  <!-- מודל יצירת קשר -->
+  <div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+    <div class="modal-content">
+      <span class="close" aria-label="סגירת טופס">&times;</span>
+      <h2 id="contactModalTitle">השארת פרטים</h2>
+
+      <form id="contactForm">
+        <input
+          id="firstName"
+          name="first_name"
+          placeholder="שם פרטי"
+          required
+        >
+        <input
+          id="lastName"
+          name="last_name"
+          placeholder="שם משפחה"
+          required
+        >
+        <input
+          id="phone"
+          name="phone"
+          placeholder="טלפון"
+          required
+        >
+        <input
+          id="email"
+          name="user_email"
+          type="email"
+          placeholder="מייל"
+          required
+        >
+        <textarea
+          id="message"
+          name="message"
+          placeholder="ספרו לנו על הטיול שאתם רוצים..."
+          rows="4"
+        ></textarea>
+
+        <button type="submit">
+          שליחה
+        </button>
+
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- גלריה -->
+  <section id="gallery" class="gallery-wrapper text-container">
+    <h2>גלריית התמונות שלנו</h2>
+
+    <div class="gallery">
+      <img
+        src="images/11.jpg"
+        alt="נוף מטיול במדבר עם קבוצה"
+        loading="lazy"
+        draggable="false"
+        oncontextmenu="return false;"
+      >
+      <img
+        src="images/12.jpg"
+        alt="תצפית מרהיבה על הרי ירושלים"
+        loading="lazy"
+        draggable="false"
+        oncontextmenu="return false;"
+      >
+      <img
+        src="images/13.jpg"
+        alt="קבוצה מטיילת בקניון מדברי"
+        loading="lazy"
+        draggable="false"
+        oncontextmenu="return false;"
+      >
+    </div>
+
+    <div class="gallery-navigation">
+      <a href="gallery.html" class="btn-gallery-link">
+        📸 לצפייה בגלריה המלאה
+      </a>
+    </div>
+  </section>
+
+  <!-- כפתור וואטסאפ קבוע -->
+  <a id="whatsapp-chat"
+     href="https://wa.me/972503251251"
+     target="_blank"
+     rel="noopener"
+     aria-label="פתיחת שיחה בוואטסאפ עם טיולי ירושלים">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+      loading="lazy"
+      draggable="false"
+      oncontextmenu="return false;"
+    >
+  </a>
+
+  <!-- תפריט נגישות -->
+  <div id="accessibility-btn" title="תפריט נגישות" aria-label="פתיחת תפריט נגישות">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/75/75154.png"
+      alt="תפריט נגישות"
+      loading="lazy"
+      draggable="false"
+      oncontextmenu="return false;"
+      ondragstart="return false;"
+      style="width: 30px; filter: invert(1);"
+    >
+  </div>
+
+  <div id="accessibility-menu" class="a11y-menu" aria-label="תפריט נגישות">
+    <h3>תפריט נגישות</h3>
+
+    <button onclick="toggleGrayscale()">
+      🌑 גווני אפור
+    </button>
+
+    <button onclick="toggleHighContrast()">
+      🌓 ניגודיות גבוהה
+    </button>
+
+    <button onclick="changeFontSize(1)">
+      ➕ הגדלת טקסט
+    </button>
+
+    <button onclick="changeFontSize(-1)">
+      ➖ הקטנת טקסט
+    </button>
+
+    <button onclick="resetA11y()">
+      🔄 איפוס הגדרות
+    </button>
+
+    <p style="font-size: 12px; margin-top: 10px; color: #bbb;">
+      טיולי ירושלים לכולם
+    </p>
+  </div>
+
+  <!-- Room Popup (חדר תוכן נוסף) -->
+  <div id="room" class="room" aria-hidden="true">
+    <div class="room-content">
+      <span class="close-room" onclick="closeRoom()" aria-label="סגירת חלון">✖</span>
+      <div id="room-inner"></div>
+    </div>
+  </div>
+
+  <!-- פוטר -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="footer-slogan">
+        שירותיות ומקצועיות באהבה ❤️
+      </p>
+      <p class="footer-inspiration">
+        מחפשים השראה למסלול הבא? קבלו רעיונות לטיולים בירושלים ובכל הארץ.
+      </p>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">
+        &copy; 2015-2026 טיולי ירושלים - כל הזכויות שמורות
+      </p>
+    </div>
+  </footer>
+
+  <!-- FAB Menu -->
+  <div id="fabMenu">
+    <button id="fabMain" aria-label="פתיחת תפריט מהיר">⚙️</button>
+    <button id="modeToggle" class="fabItem">🌓 מצב תצוגה</button>
+    <button id="backToTop" class="fabItem">⬆️ למעלה</button>
+  </div>
+
+  <!-- JS ראשי -->
+  <script src="script.js"></script>
 </body>
 </html>
-
-

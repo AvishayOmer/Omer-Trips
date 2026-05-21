@@ -1,0 +1,6 @@
+: robots.txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://tripjeru.org.il/sitemap.xml
