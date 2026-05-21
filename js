@@ -255,6 +255,58 @@ function changeSlide() {
 // מעבר אוטומטי כל 4 שניות
 setInterval(changeSlide, 4000);
 
+// --- גלריה עם Lightbox ---
+
+const gallerySlider = document.getElementById("image-slider");
+const galleryImages = [
+  "images/1.jpg",
+  "images/2.jpg",
+  "images/3.jpg",
+  "images/4.jpg",
+  "images/5.jpg",
+  "images/6.jpg",
+  "images/7.jpg",
+  "images/8.jpg",
+  "images/9.jpg",
+  "images/10.jpg",
+  "images/11.jpg",
+  "images/12.jpg",
+  "images/13.jpg",
+  "images/14.jpg",
+  "images/15.jpg",
+  "images/16.jpg"
+];
+
+let galleryIndex = 0;
+
+// סליידר אוטומטי
+setInterval(() => {
+  galleryIndex = (galleryIndex + 1) % galleryImages.length;
+  gallerySlider.style.opacity = 0;
+
+  setTimeout(() => {
+    gallerySlider.src = galleryImages[galleryIndex];
+    gallerySlider.style.opacity = 1;
+  }, 400);
+}, 4000);
+
+// --- Lightbox ---
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+gallerySlider.addEventListener("click", () => {
+  lightboxImg.src = galleryImages[galleryIndex];
+  lightbox.style.display = "flex";
+});
+
+document.querySelector(".close-lightbox").onclick = () => {
+  lightbox.style.display = "none";
+};
+
+lightbox.onclick = (e) => {
+  if (e.target === lightbox) lightbox.style.display = "none";
+};
+
 
 
 
