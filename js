@@ -46,20 +46,6 @@ if (heroPrev) heroPrev.addEventListener("click", prevHero);
 setInterval(nextHero, 6000); // מעבר אוטומטי כל 6 שניות
 
 /* -----------------------------------------------------------
-   סליידר משני (תמונה מתחלפת)
------------------------------------------------------------ */
-const sliderImg = document.getElementById("image-slider");
-let sliderIndex = 1;
-
-function changeSliderImage() {
-  sliderIndex++;
-  if (sliderIndex > 12) sliderIndex = 1;
-  sliderImg.src = `images/${sliderIndex}.jpg`;
-}
-
-setInterval(changeSliderImage, 5000);
-
-/* -----------------------------------------------------------
    מודל יצירת קשר
 ----------------------------------------------------------- */
 const contactModal = document.getElementById("contactModal");
@@ -215,8 +201,7 @@ window.addEventListener("scroll", () => {
     fabMain.style.transform = "scale(0.9)";
   }
 });
-emailjs.init("u9MRRRVgErghPjkuE");
-emailjs.sendForm("tripjeru_service", "template_4qoa25e, contactForm")
+
 // רשימת 16 התמונות שלך
 const sliderImages = [
   "images/1.jpg",
